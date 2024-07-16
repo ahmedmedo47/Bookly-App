@@ -1,4 +1,3 @@
-import 'package:booklykian/core/utils/styles.dart';
 import 'package:booklykian/features/home/presentation/views/widgets/best_tile_list_view.dart';
 import 'package:booklykian/features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:booklykian/features/home/presentation/views/widgets/image_list.dart';
