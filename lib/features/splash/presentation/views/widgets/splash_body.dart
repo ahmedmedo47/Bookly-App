@@ -15,14 +15,34 @@ class _SplashBodyState extends State<SplashBody>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 4));
+    initSlidingAnimation();
+    goToHome();
+  }
 
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 7), end: Offset.zero)
-        .animate(animationController);
+  void goToHome() {
+    Future.delayed(
+        const Duration(
+          seconds: 3,
+        ), () {
+      Navigator.pushReplacementNamed(context, '/home');
+    });
+  }
+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 4));
+
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 7), end: Offset.zero)
+            .animate(animationController);
     animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -35,7 +55,7 @@ class _SplashBodyState extends State<SplashBody>
         Center(
             child: SlideTransition(
                 position: slidingAnimation,
-                child: Text(
+                child: const Text(
                   "Read Free Books",
                   style: TextStyle(color: Colors.white),
                 )))
