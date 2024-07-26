@@ -43,7 +43,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const CustomAppBar(),
-                    ImageList(books: bookViewModel.bestSellers),
+                    ImageList(books: bookViewModel.newestBooks),
                     const SizedBox(height: 50),
                     Text(
                       'Best Seller',

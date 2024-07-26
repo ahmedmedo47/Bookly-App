@@ -31,7 +31,8 @@ class HomeRepoImple implements HomeRepo {
     try {
       List<Books> books = [];
       var response = await apiService.fetchBooks(
-          url: 'volumes?Filtering=free-ebooks&q=programming&Sorting=newest');
+          url:
+              'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=relevance');
       for (var item in response['items']) {
         books.add(Books.fromJson(item));
       }
@@ -48,7 +49,8 @@ class HomeRepoImple implements HomeRepo {
     try {
       List<Books> books = [];
       var response = await apiService.fetchBooks(
-          url: 'volumes?Filtering=free-ebooks&q=programming&Sorting=newest');
+          url:
+              'volumes?Filtering=free-ebooks&q=computer science&Sorting=newest');
       for (var item in response['items']) {
         books.add(Books.fromJson(item));
       }

@@ -1,13 +1,14 @@
 import 'package:booklykian/features/home/data/models/books/books.dart';
+import 'package:booklykian/features/home/presentation/view_models/book_view_model.dart';
 import 'package:booklykian/features/home/presentation/views/widgets/image_container.dart';
 import 'package:booklykian/features/home/presentation/views/widgets/rating.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'widgets/custom_bottom.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key, this.book, this.relatedBooks});
+  const BookDetailsView({super.key, this.book});
   final Books? book;
-  final List<Books>? relatedBooks;
 
   @override
   Widget build(BuildContext context) {
@@ -120,22 +121,26 @@ class BookDetailsView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            SizedBox(
-              height: height * 0.2, // Adjust height as needed
-              child: ListView.builder(
-                itemCount: relatedBooks?.length ?? 0,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  final relatedBook = relatedBooks![index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ImageContainer(
-                      book: relatedBook,
-                      onTap: () {},
-                    ),
-                  );
-                },
-              ),
+            Consumer<BookViewModel>(
+              builder: (context, bookViewModel, child) {
+                return SizedBox(
+                height: height * 0.2,
+                child: ListView.builder(
+                  itemCount:bookViewModel.featuredBooks.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    final relatedBook = bookViewModel.featuredBooks[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ImageContainer(
+                        book: relatedBook,
+                        onTap: () {},
+                      ),
+                    );
+                  },
+                ),
+              );
+              },
             ),
             const SizedBox(height: 40),
           ],

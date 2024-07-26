@@ -25,7 +25,6 @@ class ImageList extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => BookDetailsView(
                     book: book,
-                    relatedBooks: books,
                   ),
                 ),
               );

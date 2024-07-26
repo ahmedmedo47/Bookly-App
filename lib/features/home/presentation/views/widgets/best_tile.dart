@@ -18,7 +18,7 @@ class BestTile extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) =>
-                  BookDetailsView(book: book, relatedBooks: relatedBooks),
+                  BookDetailsView(book: book),
             ),
           );
         },
