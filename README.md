@@ -3,8 +3,11 @@ Bookly is a modern book browsing and recommendation app developed using Flutter.
 
 ## Features
 Home Page: Browse a curated list of books.
+
 Book Details: View detailed information about a selected book.
+
 Related Books: See recommendations for books related to the currently viewed book.
+
 Search: Search for books by title or author.
 Favorites: Add and manage favorite books.
 Dark Mode: Switch between light and dark themes.
