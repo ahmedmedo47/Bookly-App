@@ -1,7 +1,7 @@
-#Bookly App
+# Bookly App
 Bookly is a modern book browsing and recommendation app developed using Flutter. This app follows the MVVM (Model-View-ViewModel) pattern and utilizes the Provider package for state management. Users can browse books, view details, and get recommendations for related books.
 
-##Features
+## Features
 Home Page: Browse a curated list of books.
 Book Details: View detailed information about a selected book.
 Related Books: See recommendations for books related to the currently viewed book.
