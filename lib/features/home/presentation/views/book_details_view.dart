@@ -41,6 +41,7 @@ class BookDetailsView extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: height * 0.1),
               child: ImageContainer(
+                heroTag: book!.id.toString(),
                 book: book,
                 onTap: () {},
               ),
@@ -133,6 +134,7 @@ class BookDetailsView extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ImageContainer(
+                        heroTag: relatedBook.id.toString(),
                         book: relatedBook,
                         onTap: () {},
                       ),

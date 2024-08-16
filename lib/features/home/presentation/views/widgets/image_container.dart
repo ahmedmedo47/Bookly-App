@@ -6,10 +6,12 @@ class ImageContainer extends StatelessWidget {
     super.key,
     this.book,
     required this.onTap,
+    required this.heroTag,
   });
 
   final Books? book;
   final VoidCallback onTap;
+  final Object heroTag;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +30,17 @@ class ImageContainer extends StatelessWidget {
         padding: const EdgeInsets.only(left: 8.0),
         child: AspectRatio(
           aspectRatio: 3 / 4,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(20)),
-              image: DecorationImage(
-                image: NetworkImage(
-                  imageUrl,
+          child: Hero(
+            tag: heroTag,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                image: DecorationImage(
+                  image: NetworkImage(
+                    imageUrl,
+                  ),
+                  fit: BoxFit.cover,
                 ),
-                fit: BoxFit.cover,
               ),
             ),
           ),

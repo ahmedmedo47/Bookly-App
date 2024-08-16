@@ -28,7 +28,7 @@ class ImageList extends StatelessWidget {
                   ),
                 ),
               );
-            },
+            }, heroTag: book.id.toString(),
           );
         },
       ),
